@@ -24,12 +24,12 @@ function Cards(){
     const [prev, setPrev] = useState(-1)
 
     function check(current){
-        if(items[current].id === items[prev].id){
+        if (items[current].id === items[prev].id){
             items[current].stat = "correct"
             items[prev].stat = "correct"
             setItems([...items])
             setPrev(-1)
-        }else{
+        } else {
             items[current].stat = "wrong"
             items[prev].stat = "wrong"
             setItems([...items])
@@ -42,12 +42,12 @@ function Cards(){
         }
     }
 
-    function handleClick(id){
-        if(prev === -1){
+    function handleClick(id) {
+        if (prev === -1){
             items[id].stat = "active"
             setItems([...items])
             setPrev(id)
-        }else{
+        } else {
             check(id)
         }
     }
